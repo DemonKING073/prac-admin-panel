@@ -13,9 +13,13 @@ const LoginPage = () =>{
         username:'',
         password:'',
     }
+    const mainUrl = window.location.href;
+    const Homepage = mainUrl.slice(0,21);
+    console.log(Homepage);
+
 
     const toHomePage = () =>{
-        window.location.replace('http://localhost:3001/');
+        window.location.replace(Homepage);
     }
     const [user, setUser] = useState(initialState);
     const handleSubmit = (e) =>{
