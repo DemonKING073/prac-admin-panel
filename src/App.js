@@ -4,16 +4,17 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux'
 import refreshReducer from './reducer/refreshReducer';
 import LoginPage from './LoginPage';
+import { createBrowserHistory } from 'history';
 
 
 const store = createStore(refreshReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 function App() {
+  const history = createBrowserHistory({forceRefresh:true});
   const Token = localStorage.getItem('isLoggedAdmin')
-  console.log(window.location.href)
   return (
     <Provider store={store}>
-        <Router>
+        <Router history={history}>
         <Switch>
           <Route path="/login" exact component={LoginPage}/>
           <Route path="/" render={()=>{

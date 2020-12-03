@@ -7,17 +7,15 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure();
-const LoginPage = () =>{
+const LoginPage = ({history}) =>{
     const initialState={
         username:'',
         password:'',
     }
-    const mainUrl = window.location.href;
-    const homeUrl=mainUrl.replace('/login','');
-
-
+    const url = window.location.href;
+    const homeUrl = url.replace('/login','')
     const toHomePage = () =>{
-        window.location.replace(homeUrl);
+        window.location.replace(homeUrl)
     }
     const [user, setUser] = useState(initialState);
     const handleSubmit = (e) =>{
