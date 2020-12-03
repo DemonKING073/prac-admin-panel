@@ -7,10 +7,10 @@ const Dashboard = () =>{
     const [ sales, setSales ] = useState(0);
     const [tCustomer, setTCustomer] = useState('');
     useEffect(()=>{
-        axios.get('http://localhost:3000/orders/lamo/sales')
+        axios.get('https://my-first-resturant.herokuapp.com/orders/lamo/sales')
             .then(res=>setSales(res.data.totalSales))
             .catch(err=>console.log(err));
-        axios.get('http://localhost:3000/orders/lamo/topcustomer')
+        axios.get('https://my-first-resturant.herokuapp.com/orders/lamo/topcustomer')
         .then(res=>setTCustomer(res.data.topCustomer))
         .catch(err=>console.log(err));
     },[]);

@@ -14,7 +14,7 @@ const Orders = () =>{
     const dispatch = useDispatch();
     const [orders, setOrders] = useState([]);
     useEffect(()=>{
-        axios.get('http://localhost:3000/orders/')
+        axios.get('https://my-first-resturant.herokuapp.com/orders/')
             .then(res=>{
                 setOrders(res.data.orders);
             })
@@ -23,7 +23,7 @@ const Orders = () =>{
             });
     },[count]);
     const handleDelete = (id) =>{
-        axios.delete('http://localhost:3000/orders/'+id)
+        axios.delete('https://my-first-resturant.herokuapp.com/orders/'+id)
             .then(res=>{
                 toast.success('Order Deleted',{position:toast.POSITION.BOTTOM_RIGHT})
                 dispatch(addCount());

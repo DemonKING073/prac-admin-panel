@@ -28,7 +28,7 @@ const LoginPage = () =>{
             userName:user.username,
             password:user.password
         }
-        axios.post('http://localhost:3000/admin/login',data)
+        axios.post('https://my-first-resturant.herokuapp.com/admin/login',data)
             .then(res=>{
                 toast.success('Logged Successfully!',{position:toast.POSITION.BOTTOM_RIGHT});
                 localStorage.setItem('admin-token',res.data.token);

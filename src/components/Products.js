@@ -25,7 +25,7 @@ const Products = () =>{
         formData.append('productDesc',data.productDesc);
         formData.append('productImage',data.productImage);
         formData.append('special',data.special);
-        axios.post('http://localhost:3000/products',formData)
+        axios.post('https://my-first-resturant.herokuapp.com/products',formData)
             .then(res=>{
                 toast.success('Product Added successfully!',{position:toast.POSITION.BOTTOM_RIGHT});
                 dispatch(addCount());
@@ -37,7 +37,7 @@ const Products = () =>{
     }
     const dispatch = useDispatch();
     const handleDelete = (id) =>{
-        axios.delete(`http://localhost:3000/products/${id}`)
+        axios.delete(`https://my-first-resturant.herokuapp.com/products/${id}`)
             .then(res=>{
                 toast.success('Product Deleted successfully!',{position:toast.POSITION.BOTTOM_RIGHT});
                 dispatch(addCount());
@@ -48,7 +48,7 @@ const Products = () =>{
     const [products,setProducts] = useState([]);
     const [specialP, setSpecialP] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:3000/products')
+        axios.get('https://my-first-resturant.herokuapp.com/products')
             .then(res=>{
                 console.log(res);
                 setProducts(res.data.products);
@@ -57,7 +57,7 @@ const Products = () =>{
             .catch(err=>{
                 console.log(err);
             });
-            axios.get('http://localhost:3000/products/getSpecial/true')
+            axios.get('https://my-first-resturant.herokuapp.com/products/getSpecial/true')
                 .then(res=>{
                     console.log(res);
                     setSpecialP(res.data.specialProducts);

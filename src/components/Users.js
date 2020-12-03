@@ -12,7 +12,7 @@ const Users = () =>{
     const [users, setUsers] = useState([]);
 
     const handleDelete= (id)=>{
-        axios.delete('http://localhost:3000/user/'+id)
+        axios.delete('https://my-first-resturant.herokuapp.com/user/'+id)
             .then(res=>{
                 toast.success('User Deleted successfully!',{position:toast.POSITION.BOTTOM_RIGHT});
                 dispatch(addCount());
@@ -22,7 +22,7 @@ const Users = () =>{
             });
     }
     useEffect(()=>{
-        axios.get('http://localhost:3000/user')
+        axios.get('https://my-first-resturant.herokuapp.com/user')
             .then(res=>{
                 setUsers(res.data.Users);
             })
