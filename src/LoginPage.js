@@ -5,10 +5,11 @@ import LockIcon from '@material-ui/icons/Lock';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useHistory } from 'react-router-dom';
 
 toast.configure();
 const LoginPage = () =>{
-
+    const history = useHistory();
     const initialState={
         username:'',
         password:'',
@@ -19,7 +20,7 @@ const LoginPage = () =>{
 
 
     const toHomePage = () =>{
-        window.location.replace(Homepage);
+        history.push('/');
     }
     const [user, setUser] = useState(initialState);
     const handleSubmit = (e) =>{
