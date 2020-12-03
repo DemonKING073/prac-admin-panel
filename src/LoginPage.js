@@ -17,7 +17,7 @@ const LoginPage = () =>{
 
 
     const toHomePage = () =>{
-        window.open(homeUrl);
+        window.location.replace(homeUrl);
     }
     const [user, setUser] = useState(initialState);
     const handleSubmit = (e) =>{

@@ -12,7 +12,7 @@ const Setting = () =>{
     const url = window.location.href;
     const loginUrl = url.replace('/admin/setting','/login')
     const toLoginPage = ()=>{
-        window.open(loginUrl);
+        window.location.replace(loginUrl);
     }
     const dispatch = useDispatch();
     const status = useSelector(state=>state.status);
