@@ -127,7 +127,7 @@ const Products = () =>{
                 {
                     specialP.length===0?<tr><td>No Data</td></tr>:
                     specialP.map((item,index)=>{
-                        const a = `http://localhost:3000/${item.productImage}`;
+                        const a = `https://my-first-resturant.herokuapp.com/${item.productImage}`;
                         return(
                             <tr key={index}>
                                 <td>{item.name}</td>

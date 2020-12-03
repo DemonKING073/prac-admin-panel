@@ -9,9 +9,10 @@ import  { setStatus } from '../action/refreshAction';
 toast.configure();
 
 const Setting = () =>{
-
+    const url = window.location.href;
+    const loginUrl = url.replace('/admin/setting','/login')
     const toLoginPage = ()=>{
-        window.location.reload(false);
+        window.open(loginUrl);
     }
     const dispatch = useDispatch();
     const status = useSelector(state=>state.status);
