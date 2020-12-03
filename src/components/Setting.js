@@ -10,7 +10,7 @@ toast.configure();
 
 const Setting = () =>{
     const url = window.location.href;
-    const loginUrl = url.replace('/admin/setting','/login')
+    const loginUrl = url.replace('/admin/setting','');
     const toLoginPage = ()=>{
         window.location.replace(loginUrl);
     }
